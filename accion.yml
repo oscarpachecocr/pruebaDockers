@@ -1,0 +1,15 @@
+name: 'Saludos desde Docker'
+description: 'Hace un saludo desde el contenedor'
+inputs:
+  quien:
+    description: 'Para quién es el saludo'
+    requiered: true
+    default: 'Todos'
+outputs:
+  hora:
+    description: 'La hora del saludo'
+runs:
+  using: 'Docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.quien }}
